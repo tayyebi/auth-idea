@@ -16,7 +16,7 @@ $token = '';
 
 // Get request headers
 foreach (getallheaders() as $name => $value) { 
-    echo "$name: $value <br>";
+    // echo "$name: $value <br>";
     if ($name == "Auth-Token")
         $token = $value;
 } 

@@ -122,7 +122,7 @@ def proxy_thread(conn, client_addr):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  
         s.connect((webserver, port))
         
-        # line 126 to 133 bu @tayyebi
+        # line 126 to 133 by @tayyebi
         with open('proxy_token.txt', 'r') as content_file:
             # read token from file
             content = content_file.read()
@@ -131,7 +131,6 @@ def proxy_thread(conn, client_addr):
             request = request.split('\r\n\r\n')[0]
             # rebuild request
             request += "\r\n" + "Auth-Token: " + content + "\r\n\r\n"
-            print request;
             
         s.send(request)         # send request to webserver
 
